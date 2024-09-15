@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Object</title>
+</head>
+<body>
+
+    <script>
+        const product= {
+            Name: 'Tshirt',
+            price: 199,
+            ['delivery-time']: '1 day ', 
+            rating : {
+                stars: 4.5,
+                count: 87
+            },     // nested object
+            fun: function fun1(){
+                console.log('hello');
+                
+            }
+        };
+        console.log(product);
+        console.log(product.Name); //this is dot notation
+        console.log(product['Name']); // this is know as Bracket notation
+         /* why we use bracket one is  because sometime dot notaion doesn't work that's why bracket notaion is used in such case for eg uses of +- or special characters  */
+
+        product.fun();
+        // function inside a object is known as method 
+        //JSON objectis universal JSON = Javascript Object Notation
+        // similar to JS object but less features 
+        // used when we send data between 2 computers 
+        // converting js object to json
+        console.log(JSON.stringify(product)); 
+                
+        // local storage is a new method which is used instead of creating a variable
+
+        // syntax for localstorage 
+        // localStorage('name for reference','our object')
+
+        localStorage.setItem('myProduct', JSON.stringify(product) );// item setting reference for product in reference name 
+
+        console.log(JSON.parse(localStorage.getItem('myProduct')));// item getting stored 
+    </script>
+</body>
+</html> 
