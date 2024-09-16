@@ -41,6 +41,57 @@
         localStorage.setItem('myProduct', JSON.stringify(product) );// item setting reference for product in reference name 
 
         console.log(JSON.parse(localStorage.getItem('myProduct')));// item getting stored 
+
+        const object1={
+            message: 'hello'
+        };
+        // object are reference they always point towards the memory where value inside the object1 is stored      
+
+        const object2=object1;
+        object1.message='Good job';
+
+        console.log(object1);
+        console.log(object2);
+
+        const object3 ={
+            message: 'Good job'
+        };
+
+        console.log(object3 === object1);
+        // since object3 is different even though the values are same but reference are different thus output will be false 
+        console.log(object2 === object1);
+        // since object2 and object1 have same reference therefore output will be true 
+
+        //shortcuts in object
+        const object4={
+            message: 'Good job',
+            price:89
+        }
+
+        // const message = object4.message;
+        // when variable name and instance variable are same we can use below shortcut
+
+        const {message, price}= object4;
+        // this known as destructuring 
+        // it is an easier way to take properties out of an object
+        console.log(message);
+        console.log(price);
+
+        const object5 = {
+            // message: message
+            // we are going to use again a shortcut called shorthand property 
+            message,
+            // shorthand method 
+            // method: function function1(){
+            //     console.log('method');
+            // }
+            method(){
+                console.log('method');
+            }
+        };
+        console.log(object5);
+        object5.method();
+        
     </script>
 </body>
 </html> 
